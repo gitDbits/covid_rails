@@ -4,9 +4,9 @@ Projeto apresentado na semana científica da Farol - Faculdade de Rolim de Moura
 
 - Estrutura da palestra
 
-![Apresentaçao palestra](/home/noronha/.config/Typora/typora-user-images/image-20200827233714584.png)
+![Apresentaçao palestra](https://covidrailsnoronha.herokuapp.com/users/sign_in)
 
-Objetivo: deverá ser criado um portal que liste os caso de COVID  no Brasil por estados
+Objetivo: deverá ser criado um portal que liste os caso de COVID  no Brasil por estados do
 
 - Quantidade total de casos
 
@@ -99,8 +99,7 @@ Objetivo: deverá ser criado um portal que liste os caso de COVID  no Brasil por
   - Alterar textos para pt-BR
   - Alterar botões 
   - Alterar table para deixar com os ícones e cores diferentes
-  - Colocar lista de estados pelo nome
-    - e
+  - Colocar lista de estados em ordem alfabética
 
 - Implementado gráficos
 
