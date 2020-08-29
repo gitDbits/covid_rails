@@ -1,0 +1,42 @@
+<%= form_with(model: covid_case, local: true) do |form| %>
+  <% if covid_case.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(covid_case.errors.count, "error") %> prohibited this covid_case from being saved:</h2>
+
+      <ul>
+        <% covid_case.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :death %>
+    <%= form.text_field :death %>
+  </div>
+
+  <div class="field">
+    <%= form.label :suspect %>
+    <%= form.text_field :suspect %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cured %>
+    <%= form.text_field :cured %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state_id %>
+    <%= form.text_field :state_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

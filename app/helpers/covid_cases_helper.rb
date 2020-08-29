@@ -1,0 +1,2 @@
+module CovidCasesHelper
+end

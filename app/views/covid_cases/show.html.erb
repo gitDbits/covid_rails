@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @covid_case.amount %>
+</p>
+
+<p>
+  <strong>Death:</strong>
+  <%= @covid_case.death %>
+</p>
+
+<p>
+  <strong>Suspect:</strong>
+  <%= @covid_case.suspect %>
+</p>
+
+<p>
+  <strong>Cured:</strong>
+  <%= @covid_case.cured %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @covid_case.state_id %>
+</p>
+
+<%= link_to 'Edit', edit_covid_case_path(@covid_case) %> |
+<%= link_to 'Back', covid_cases_path %>
