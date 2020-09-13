@@ -15,8 +15,10 @@
 <body>
   <div class="container">
     <%= render "layouts/header" if user_signed_in? %>
-    <p class="notice text-success"><%= notice %></p>
-    <p class="alert text-danger"><%= alert %></p>
+    <div class="row justify-content-md-center">
+      <p class="notice alert-success"><%= notice %></p>
+      <p class="alert text-danger"><%= alert %></p>
+    </div>
     <%= yield %>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

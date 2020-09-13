@@ -1,23 +1,38 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">CovidRails19</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <%= link_to 'covid_rails', root_path, class: 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarHeader">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to  "Início", root_path, class: 'nav-link' %>
+        <%= link_to  "Início", root_path, class: 'nav-link h4' %>
       </li>
       <li class="nav-item active">
-        <%= link_to  "Estados", states_path, class: 'nav-link' %>
+        <%= link_to  "Estados", states_path, class: 'nav-link h4' %>
       </li>
       <li class="nav-item active">
-        <%= link_to  "Casos", covid_cases_path, class: 'nav-link' %>
+        <%= link_to  "Casos", covid_cases_path, class: 'nav-link h4' %>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <%= current_user.email %>
+      <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= link_to  edit_user_registration_path, class: 'text-white', data: { turbolinks: false } do %>
+          <%= current_user.email %>
+        <% end %>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to edit_user_registration_path, class: 'dropdown-item', data: { turbolinks: false } do %>
+          <i class="fa fa-user"></i>
+          Perfil
+        <% end %>
+        <%= link_to destroy_session_path(:user), method: :delete, class: 'dropdown-item', data: { turbolinks: false } do %>
+          <i class="fa fa-sign-out"></i>
+          Sair
+        <% end %>
+      </div>
     </form>
   </div>
 </nav>

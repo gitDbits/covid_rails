@@ -1,0 +1,35 @@
+<table class="table table-bordered" id="#table">
+  <thead>
+    <tr>
+      <th>Estado</th>
+      <th>Total</th>
+      <th>Mortes</th>
+      <th>Suspeitos</th>
+      <th>Curados</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @covid_cases.each do |covid_case| %>
+    <tr>
+      <td><%= covid_case.state.name %></td>
+      <td><%= covid_case.amount %></td>
+      <td><%= covid_case.death %></td>
+      <td><%= covid_case.suspect %></td>
+      <td><%= covid_case.cured %></td>
+      <td>
+        <%= link_to covid_case_path(covid_case), class: 'btn btn-primary btn-sm' do %>
+        <i class="fa fa-search"></i>
+        <% end %>
+        <%= link_to edit_covid_case_path(covid_case), class: 'btn btn-warning btn-sm' do %>
+        <i class="fa fa-edit"></i>
+        <% end %>
+        <%= link_to covid_case_path(covid_case), method: :delete,  data: { confirm: "#{current_user.email} tem certeza que deseja excluir?" }, class: 'btn btn-danger btn-sm' do %>
+        <i class="fa fa-trash"></i>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%== pagy_bootstrap_nav(@pagy) %>

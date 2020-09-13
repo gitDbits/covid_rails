@@ -1,0 +1,15 @@
+<%= search_form_for @q do |f| %>
+  <strong><%= f.label 'Buscar pelo nome do Estado', for: 'q_uf_or_name_cont' %></strong>
+  <span class="badge badge-warning">
+    <%= link_to "LIMPAR PESQUISA", states_path, class: 'text-dark' %>
+  </span>
+  <div class="input-group col-md-4">
+    <%= f.search_field :uf_or_name_cont, class: "form-control py-2", type:"search", placeholder: 'Digite a sua busca', id: "q_uf_or_name_cont" %>
+    <span class="input-group-append">
+      <button class="btn btn-primary" type="button">
+        <i class="fa fa-search"></i>
+      </button>
+    </span>
+  </div>
+  <%= "<i class='fa fa-close text-danger'></i> <strong class='text-danger'>Não foi possível encontrar sua busca</strong>".html_safe if @q.result.empty? %> 
+<% end %></br>

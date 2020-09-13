@@ -1,14 +1,19 @@
-<p id="notice"><%= notice %></p>
-
+<div class="col-md-3">
+  <%= link_to states_path, class: 'btn btn-primary' do %>
+  <i class="fa fa-arrow-left"></i>
+  VOLTAR
+  <% end %>
+  <%= link_to edit_state_path(@state), class: 'btn btn-warning btn-sm' do %>
+  <i class="fa fa-edit"></i>
+  EDITAR
+  <% end %>
+</div>
+<hr>
 <p>
-  <strong>Uf:</strong>
+  <strong>UF:</strong>
   <%= @state.uf %>
 </p>
-
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @state.name %>
 </p>
-
-<%= link_to 'Edit', edit_state_path(@state) %> |
-<%= link_to 'Back', states_path %>

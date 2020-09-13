@@ -4,7 +4,8 @@ class StatesController < ApplicationController
   # GET /states
   # GET /states.json
   def index
-    @states = State.all
+    @q = State.all.ransack(params[:q])
+    @pagy, @states = pagy(@q.result.order(:uf))
   end
 
   # GET /states/1

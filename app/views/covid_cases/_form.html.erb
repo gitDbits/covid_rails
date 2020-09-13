@@ -1,42 +1,38 @@
 <%= form_with(model: covid_case, local: true) do |form| %>
-  <% if covid_case.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(covid_case.errors.count, "error") %> prohibited this covid_case from being saved:</h2>
-
-      <ul>
-        <% covid_case.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+<% if covid_case.errors.any? %>
+<div id="error_explanation" class="alert alert-danger" role="alert">
+  <h2><%= pluralize(covid_case.errors.count, "erros") %> encontrados:</h2>
+  <ul>
+    <% covid_case.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="form-group text-uppercase">
+  <strong><%= form.label 'Total', for: 'covid_case_amount' %></strong>
+  <%= form.text_field :amount, class: 'form-control', placeholder: 'Informe o total de casos' %>
+</div>
+<div class="form-group text-uppercase">
+  <strong><%= form.label 'Mortos', for: 'covid_case_death' %></strong>
+  <%= form.text_field :death, class: 'form-control', placeholder: 'Informe o total de mortos' %>
+</div>
+<div class="form-group text-uppercase">
+  <strong><%= form.label 'Suspeitos', for: 'covid_case_suspect' %></strong>
+  <%= form.text_field :suspect, class: 'form-control', placeholder: 'Informe o total de suspeitos' %>
+</div>
+<div class="form-group text-uppercase">
+  <strong><%= form.label 'Curados', for: 'covid_case_cured' %></strong>
+  <%= form.text_field :cured, class: 'form-control', placeholder: 'Informe o total de curados' %>
+</div>
+<div class="form-group">
+  <strong><%= form.label 'Estado', for: 'covid_case_state_name' %></strong>
+  <%= form.select :state_id, @states.collect { |state| [state.name, state.id] }, {}, class: "form-control" %>
+</div>
+<div class="text-center">
+  <%= form.button class: 'btn btn-success btn-lg' do %>
+  <i class="fa fa-check-circle"></i>
+  SALVAR
   <% end %>
-
-  <div class="field">
-    <%= form.label :amount %>
-    <%= form.text_field :amount %>
-  </div>
-
-  <div class="field">
-    <%= form.label :death %>
-    <%= form.text_field :death %>
-  </div>
-
-  <div class="field">
-    <%= form.label :suspect %>
-    <%= form.text_field :suspect %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cured %>
-    <%= form.text_field :cured %>
-  </div>
-
-  <div class="field">
-    <%= form.label :state_id %>
-    <%= form.text_field :state_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+</div>
 <% end %>

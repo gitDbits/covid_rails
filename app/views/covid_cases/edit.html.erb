@@ -1,6 +1,7 @@
-<h1>Editing Covid Case</h1>
-
+<%= link_to covid_cases_path, class: 'btn btn-primary' do %>
+<i class="fa fa-arrow-left"></i>
+VOLTAR
+<% end %>
+<hr>
+<h4><i class="fa fa-edit"></i> Editar caso COVID</h4>
 <%= render 'form', covid_case: @covid_case %>
-
-<%= link_to 'Show', @covid_case %> |
-<%= link_to 'Back', covid_cases_path %>

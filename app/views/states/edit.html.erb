@@ -1,6 +1,7 @@
-<h1>Editing State</h1>
-
+<%= link_to states_path, class: 'btn btn-primary' do %>
+<i class="fa fa-arrow-left"></i>
+VOLTAR
+<% end %>
+<hr>
+<h4><i class="fa fa-edit"></i> Editar estado</h4>
 <%= render 'form', state: @state %>
-
-<%= link_to 'Show', @state %> |
-<%= link_to 'Back', states_path %>

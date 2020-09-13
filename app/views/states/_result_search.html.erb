@@ -1,0 +1,37 @@
+<table class="table table-bordered" id="#table">
+  <thead>
+    <tr>
+      <th>
+        <%= sort_link(@q, :uf) do %>
+          <strong class="text-dark">UF</strong>
+        <% end %>
+      </th>
+      <th>
+        <%= sort_link(@q, :name) do %>
+          <strong class="text-dark">Nome</strong>
+        <% end %>
+      </th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @states.each do |state| %>
+    <tr>
+      <td><%= state.uf %></td>
+      <td><%= state.name %></td>
+      <td>
+        <%= link_to state_path(state), class: 'btn btn-primary btn-sm' do %>
+        <i class="fa fa-search"></i>
+        <% end %>
+        <%= link_to edit_state_path(state), class: 'btn btn-warning btn-sm' do %>
+        <i class="fa fa-edit"></i>
+        <% end %>
+        <%= link_to state_path(state), method: :delete,  data: { confirm: "#{current_user.email} tem certeza que deseja excluir?" }, class: 'btn btn-danger btn-sm' do %>
+        <i class="fa fa-trash"></i>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%== pagy_bootstrap_nav(@pagy) %>

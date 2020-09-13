@@ -1,29 +1,35 @@
-<p id="notice"><%= notice %></p>
-
+<div class="col-md-3">
+  <%= link_to covid_cases_path, class: 'btn btn-primary' do %>
+  <i class="fa fa-arrow-left"></i>
+  VOLTAR
+  <% end %>
+  <%= link_to edit_covid_case_path(@covid_case), class: 'btn btn-warning btn-sm' do %>
+  <i class="fa fa-edit"></i>
+  EDITAR
+  <% end %>
+</div>
+<hr>
 <p>
-  <strong>Amount:</strong>
+  <strong>Total:</strong>
   <%= @covid_case.amount %>
 </p>
 
 <p>
-  <strong>Death:</strong>
+  <strong>Mortos:</strong>
   <%= @covid_case.death %>
 </p>
 
 <p>
-  <strong>Suspect:</strong>
+  <strong>Suspeito:</strong>
   <%= @covid_case.suspect %>
 </p>
 
 <p>
-  <strong>Cured:</strong>
+  <strong>Curado:</strong>
   <%= @covid_case.cured %>
 </p>
 
 <p>
-  <strong>State:</strong>
-  <%= @covid_case.state_id %>
+  <strong>Estado:</strong>
+  <%= @covid_case.state.name %>
 </p>
-
-<%= link_to 'Edit', edit_covid_case_path(@covid_case) %> |
-<%= link_to 'Back', covid_cases_path %>

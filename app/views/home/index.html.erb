@@ -1,38 +1,7 @@
-<h1>Inicial pag</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Bem vindo ao portal Covid Rails</h1>
+<!-- chart amount covid case for states -->
+<%= chart_amount_covid_state %>
 
-<% series = [
-  { name: "Total de casos", data: @covid_cases.sum(:amount).sort_by {|k, v| -v} },
-] %>
-
-<% options = {
-  title: 'Total de casos COVID por Estado',
-  subtitle: '',
-  xtitle: '',
-  ytitle: '',
-  stacked: true
-} %>
-
-<%= column_chart(series, options) %>
-
-
-<% series_cases_covid = [
-  { name: "Total de mortes", data: @covid_cases.sum(:death) },
-  { name: "Total de curados", data: @covid_cases.sum(:cured) },
-  { name: "Total de suspeitos", data: @covid_cases.sum(:suspect) }
-  
-] %>
-
-<% options_cases_covid = {
-  title: 'Total de casos mortes x curados x suspeitos',
-  subtitle: '',
-  xtitle: '',
-  ytitle: '',
-  colors: ["#E74C3C", "#1ABC9C", "#F4D03F"],
-  dataLabels: {
-    enabled: false,
-  }
-} %>
-
-<%= area_chart(series_cases_covid, options_cases_covid) %>
+<!-- chart amounts death cured suspects -->
+<%= chart_covid_cases_state %>
 

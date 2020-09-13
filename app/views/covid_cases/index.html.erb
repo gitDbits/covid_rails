@@ -1,35 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Covid Cases</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Amount</th>
-      <th>Death</th>
-      <th>Suspect</th>
-      <th>Cured</th>
-      <th>State</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @covid_cases.each do |covid_case| %>
-      <tr>
-        <td><%= covid_case.amount %></td>
-        <td><%= covid_case.death %></td>
-        <td><%= covid_case.suspect %></td>
-        <td><%= covid_case.cured %></td>
-        <td><%= covid_case.state_id %></td>
-        <td><%= link_to 'Show', covid_case %></td>
-        <td><%= link_to 'Edit', edit_covid_case_path(covid_case) %></td>
-        <td><%= link_to 'Destroy', covid_case, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Covid Case', new_covid_case_path %>
+<h1>Caso de COVID</h1>
+<%= link_to new_covid_case_path, class: 'btn btn-primary' do %>
+<i class="fa fa-plus-circle"></i>
+NOVO CASO DE COVID
+<% end %> </br></br>
+<%= render 'covid_cases/search' %>
+<%= render 'covid_cases/result_search' %>
