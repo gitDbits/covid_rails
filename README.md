@@ -1,10 +1,6 @@
 # Covid19 Rails
 
-Projeto apresentado na semana científica da Farol - Faculdade de Rolim de Moura - Rondônia, o projeto faz parte da palestra  com o seguinte tema: Como o Ruby on Rails "salvou a minha vida" por Diego Noronha;
-
-![Acesse online](https://covidrailsnoronha.herokuapp.com/users/sign_in)
-
-<img src="public/img/screen_home.png" heigth="400" width="600"></br>
+<img src="public/img/screen_home.png"></br>
 
 Objetivo: Será criado um portal que liste os caso de COVID  no Brasil por estados do
 
